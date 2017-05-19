@@ -9,6 +9,6 @@ setup(
     license='MIT',
     py_modules=['mailroom'],
     package_dir={'': 'src'},
-    extras_require={'testing': ['pytest', 'pytest-cov']},
+    extras_require={'testing': ['pytest', 'pytest-cov', 'tox']},
     entry_points={'console_scripts': ['mailroom = mailroom:main']}
 )

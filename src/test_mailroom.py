@@ -14,21 +14,6 @@ def test_create_donor_list_0_1():
     assert len(list(create_donor_list().keys())[0].split(" ")) == 2
 
 
-# @pytest.mark.parametrize("fake_choice", [1, 2, 3, 4, "exit"])
-def test_usr_input(monkeypatch):
-    """Test user input behavior.
-        Using monkeypatch to put in input."""
-    from mailroom import usr_prompt
-    monkeypatch.setitem(__builtins__, 'input', lambda choice: "1")
-    assert usr_prompt == "1"
-
-
-def test_send_thank_you():
-    """Print donor report."""
-    from mailroom import send_thank_you
-    pass
-
-
 def test_donor_report():
     """Print donor report."""
     from mailroom import donor_report

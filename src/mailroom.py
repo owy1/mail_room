@@ -3,6 +3,10 @@ from faker import Factory
 import random
 import sys
 
+try:
+    input = raw_input
+except NameError:
+    pass
 
 def create_donor_list():
     """Create donor list in dictionary."""
@@ -14,12 +18,8 @@ def create_donor_list():
     return donor_dct
 
 
-def usr_input():
+def usr_prompt():
     """Prompt for user input."""
-    try:
-        input = raw_input
-    except NameError:
-        pass
     usr_input = input("""Please enter 1 to send a Thank You note or \n
             enter 2 to create a donor report or enter 3 to exit system.""")
     return usr_input
@@ -55,7 +55,7 @@ def donor_report(donor_list):
 
 def main():  # pragma: no cover
     donor_list = create_donor_list()
-    choice = usr_input()
+    choice = usr_prompt()
     if choice == "1":
         send_thank_you(donor_list)
     elif choice == "2":
@@ -64,4 +64,7 @@ def main():  # pragma: no cover
         sys.exit()
     else:
         print("Please select 1, 2 or 3.")
-        usr_input(donor_list)
+        usr_prompt(donor_list)
+
+
+main()

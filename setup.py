@@ -8,6 +8,7 @@ setup(
     author="Ophelia and Ely",
     license='MIT',
     py_modules=['mailroom'],
+    install_requires=['faker'],
     package_dir={'': 'src'},
     extras_require={'testing': ['pytest', 'pytest-cov', 'tox']},
     entry_points={'console_scripts': ['mailroom = mailroom:main']}

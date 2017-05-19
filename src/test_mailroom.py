@@ -16,5 +16,5 @@ def test_create_donor_list_0_1():
 
 def test_donor_report():
     """Print donor report."""
-    from mailroom import donor_report
-    pass
+    from mailroom import donor_report, create_donor_list
+    assert type(donor_report(create_donor_list())) is str

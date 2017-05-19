@@ -63,11 +63,16 @@ enter "back" to return to original prompt""")
 
 def donor_report(donor_list):
     """Print donor report."""
-    report_data = sorted(donor_list.items(), key=lambda kv: sum(kv[1]), reverse=True)
+    report_data = sorted(donor_list.items(),
+                         key=lambda kv: sum(kv[1]),
+                         reverse=True)
     report_data = dict(report_data)
-    report = "Donor Name          Total Donated   Num of Donations   Avg Donations\n"
+    report = "Donor Name    Total Donated   Num of Donations   Avg Donations\n"
     for key, value in report_data.items():
-        report += "{}           {}   {}   {}\n".format(key, sum(value), len(value), int(sum(value) / len(value)))
+        report += "{}      {}   {}   {}\n".format(key,
+                                                  sum(value),
+                                                  len(value),
+                                                  int(sum(value) / len(value)))
     return report
 
 
@@ -77,5 +82,5 @@ def main():  # pragma: no cover
     usr_prompt(donor_list)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     main()
